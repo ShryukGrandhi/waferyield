@@ -1,0 +1,17 @@
+{
+  "name": "waferyield",
+  "language": "Python",
+  "tech": ["Python", "pandas", "scikit-learn", "statistical process control (SPC)", "yield modeling", "wafer map analysis"],
+  "targets": ["data & analytics", "semiconductor manufacturing", "yield analysis", "statistical process control", "root-cause / equipment commonality analysis"],
+  "bullets": [
+    "Built a Python wafer-map yield analytics toolkit: 20 spatial features + random forest classify 8 defect patterns at 0.939 accuracy, 7,940 wafers/s",
+    "Fit negative binomial yield model by window method, recovering defect density D0 with 0.9-7.1% mean error; beat Poisson/Murphy/Seeds fits on every case",
+    "Benchmarked SPC (Western Electric, EWMA, CUSUM) run length on wafer yield and pandas tool commonality analysis finding a 2-pt bad chamber 93.7% of time"
+  ],
+  "summary": {
+    "what": "A Python library and CLI for semiconductor yield analytics: classifies wafer-map defect patterns, fits yield models to estimate defect density and clustering, runs SPC charts on per-wafer yield, and ranks process steps/tools by their association with yield loss.",
+    "how": "A synthetic generator with known ground truth (negative binomial random defects plus spatial signatures) feeds numpy/scipy feature extraction (radial and angular profiles, Moran's I, connected-component shape) into a scikit-learn random forest; the negative binomial model is fit with the window method by weighted least squares; SPC charts and a Kruskal-Wallis commonality analysis run on pandas data, and a benchmark measures accuracy, parameter error, run length and detection rate.",
+    "hardest": "Separating defect density from defect clustering: single-die yield cannot do it, so I tiled the die grid into windows of 1 to 16 dies and fit how yield falls with window size, which only works because clustered defects make larger windows fail less often than independent dies would predict.",
+    "say": "I built a yield analytics toolkit that does the first-pass work a yield engineer does after wafer sort: what pattern is on the wafer, what the defect density is, whether the line has shifted, and which tool is to blame. Against a generator with known ground truth it classifies 8 defect patterns at about 94% accuracy and recovers defect density within a few percent. The SPC benchmark showed that all four Western Electric rules false-alarm about six times as often as an EWMA chart for the same detection speed."
+  }
+}
