@@ -1,0 +1,372 @@
+{
+  "config": {
+    "n_train": 400,
+    "n_test": 200,
+    "n_wafers": 500,
+    "seeds": 5,
+    "runs": 1000,
+    "phase2": 5000,
+    "trials": 300
+  },
+  "env": {
+    "python": "3.12.14",
+    "machine": "arm64",
+    "system": "Darwin",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1"
+  },
+  "classification": {
+    "train_wafers": 3200,
+    "test_wafers": 1600,
+    "accuracy": 0.93875,
+    "macro_f1": 0.9387811326520269,
+    "recall": {
+      "center": 0.985,
+      "donut": 0.99,
+      "edge_loc": 0.985,
+      "edge_ring": 1.0,
+      "loc": 0.82,
+      "none": 0.89,
+      "random": 1.0,
+      "scratch": 0.84
+    },
+    "confusion_classes": [
+      "center",
+      "donut",
+      "edge_loc",
+      "edge_ring",
+      "loc",
+      "none",
+      "random",
+      "scratch"
+    ],
+    "confusion": [
+      [
+        197,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      [
+        1,
+        198,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        197,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        200,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        164,
+        22,
+        0,
+        14
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        13,
+        178,
+        0,
+        7
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        200,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        19,
+        12,
+        0,
+        168
+      ]
+    ],
+    "confusion_text": "           center  donut edge_l edge_r    loc   none random scratc\n   center     197      0      0      0      1      0      2      0\n    donut       1    198      0      0      0      0      1      0\n edge_loc       0      0    197      0      0      3      0      0\nedge_ring       0      0      0    200      0      0      0      0\n      loc       0      0      0      0    164     22      0     14\n     none       1      0      1      0     13    178      0      7\n   random       0      0      0      0      0      0    200      0\n  scratch       0      0      1      0     19     12      0    168",
+    "feature_wafers_per_s": 9783.751050433624,
+    "fit_seconds": 0.2537107905372977,
+    "end_to_end_predict_wafers_per_s": 7939.592928332816,
+    "top_features": [
+      [
+        "blob_frac_of_wafer",
+        0.09640490574932371
+      ],
+      [
+        "radial_corr",
+        0.09626736617578475
+      ],
+      [
+        "annulus_1",
+        0.08772942576805894
+      ],
+      [
+        "annulus_5",
+        0.07846830878338053
+      ],
+      [
+        "blob_r_mean",
+        0.07417439147205913
+      ]
+    ]
+  },
+  "yield": {
+    "wafers_per_lot": 500,
+    "seeds": 5,
+    "die_area_cm2": 1.0,
+    "gross_die": 616,
+    "cases": [
+      {
+        "d0": 0.1,
+        "alpha": 1.0,
+        "d0_rel_err_mean": 0.03466343632742258,
+        "alpha_rel_err_mean": 0.058266537942991636,
+        "fit_ms_mean": 10.694999806582928,
+        "rmse": {
+          "poisson": 0.09696393208429016,
+          "murphy": 0.07394256655819431,
+          "seeds": 0.004360519401822693,
+          "negbin": 0.0005251847617107265
+        }
+      },
+      {
+        "d0": 0.3,
+        "alpha": 0.5,
+        "d0_rel_err_mean": 0.07073427290586436,
+        "alpha_rel_err_mean": 0.054243531129284726,
+        "fit_ms_mean": 11.289908736944199,
+        "rmse": {
+          "poisson": 0.2114022583980816,
+          "murphy": 0.17731504277220833,
+          "seeds": 0.0802260336966231,
+          "negbin": 0.001854000535904826
+        }
+      },
+      {
+        "d0": 0.3,
+        "alpha": 2.0,
+        "d0_rel_err_mean": 0.022214107004751536,
+        "alpha_rel_err_mean": 0.04734939298986736,
+        "fit_ms_mean": 12.2854083776474,
+        "rmse": {
+          "poisson": 0.07591022496963692,
+          "murphy": 0.04218296934808161,
+          "seeds": 0.055139514749381634,
+          "negbin": 0.0014749962639807814
+        }
+      },
+      {
+        "d0": 0.3,
+        "alpha": 8.0,
+        "d0_rel_err_mean": 0.00949780646361594,
+        "alpha_rel_err_mean": 0.03706176901830405,
+        "fit_ms_mean": 12.459191493690014,
+        "rmse": {
+          "poisson": 0.019519860714831413,
+          "murphy": 0.014373845291129884,
+          "seeds": 0.11066453122391282,
+          "negbin": 0.0006740026893549437
+        }
+      },
+      {
+        "d0": 0.6,
+        "alpha": 2.0,
+        "d0_rel_err_mean": 0.0614335921630785,
+        "alpha_rel_err_mean": 0.05051091678308295,
+        "fit_ms_mean": 12.407317012548447,
+        "rmse": {
+          "poisson": 0.05811289772086612,
+          "murphy": 0.030679184849361607,
+          "seeds": 0.05139691239647072,
+          "negbin": 0.0010165196413733225
+        }
+      }
+    ]
+  },
+  "spc": {
+    "d0": 0.2,
+    "alpha": 8.0,
+    "phase1_wafers": 100,
+    "phase2_cap": 5000,
+    "runs": 1000,
+    "shifts": [
+      0.0,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "charts": {
+      "WE rule 1 only": [
+        {
+          "shift": 0.0,
+          "arl": 283.472,
+          "censored_frac": 0.002
+        },
+        {
+          "shift": 0.25,
+          "arl": 33.31,
+          "censored_frac": 0.0
+        },
+        {
+          "shift": 0.5,
+          "arl": 10.243,
+          "censored_frac": 0.0
+        },
+        {
+          "shift": 1.0,
+          "arl": 2.99,
+          "censored_frac": 0.0
+        }
+      ],
+      "WE rules 1-4": [
+        {
+          "shift": 0.0,
+          "arl": 72.403,
+          "censored_frac": 0.0
+        },
+        {
+          "shift": 0.25,
+          "arl": 14.397,
+          "censored_frac": 0.0
+        },
+        {
+          "shift": 0.5,
+          "arl": 6.069,
+          "censored_frac": 0.0
+        },
+        {
+          "shift": 1.0,
+          "arl": 2.524,
+          "censored_frac": 0.0
+        }
+      ],
+      "EWMA (0.2, 2.86)": [
+        {
+          "shift": 0.0,
+          "arl": 438.911,
+          "censored_frac": 0.005
+        },
+        {
+          "shift": 0.25,
+          "arl": 16.808,
+          "censored_frac": 0.0
+        },
+        {
+          "shift": 0.5,
+          "arl": 5.702,
+          "censored_frac": 0.0
+        },
+        {
+          "shift": 1.0,
+          "arl": 2.225,
+          "censored_frac": 0.0
+        }
+      ],
+      "CUSUM low (0.5, 4.77)": [
+        {
+          "shift": 0.0,
+          "arl": 735.194,
+          "censored_frac": 0.033
+        },
+        {
+          "shift": 0.25,
+          "arl": 19.417,
+          "censored_frac": 0.0
+        },
+        {
+          "shift": 0.5,
+          "arl": 7.048,
+          "censored_frac": 0.0
+        },
+        {
+          "shift": 1.0,
+          "arl": 3.252,
+          "censored_frac": 0.0
+        }
+      ]
+    }
+  },
+  "commonality": {
+    "wafers": 300,
+    "noise_sd": 0.03,
+    "steps": {
+      "litho": 4,
+      "etch": 6,
+      "depo": 4,
+      "cmp": 3,
+      "implant": 2,
+      "clean": 3
+    },
+    "trials": 300,
+    "hits": [
+      {
+        "yield_hit": 0.0,
+        "flag_rate": 0.05333333333333334,
+        "top1_step_correct": null,
+        "top1_step_and_tool_correct": null,
+        "ms_per_analysis": 4.548660557096203
+      },
+      {
+        "yield_hit": 0.01,
+        "flag_rate": 0.3566666666666667,
+        "top1_step_correct": 0.3333333333333333,
+        "top1_step_and_tool_correct": 0.33,
+        "ms_per_analysis": 4.561804442976912
+      },
+      {
+        "yield_hit": 0.02,
+        "flag_rate": 0.9433333333333334,
+        "top1_step_correct": 0.9366666666666666,
+        "top1_step_and_tool_correct": 0.9366666666666666,
+        "ms_per_analysis": 4.330001249909401
+      },
+      {
+        "yield_hit": 0.03,
+        "flag_rate": 0.9966666666666667,
+        "top1_step_correct": 0.9966666666666667,
+        "top1_step_and_tool_correct": 0.9966666666666667,
+        "ms_per_analysis": 4.344390835613012
+      }
+    ]
+  },
+  "total_seconds": 78.61378287523985
+}
